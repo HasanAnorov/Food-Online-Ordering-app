@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ItemViewInfoActivity">
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="38dp"
+        android:background="@drawable/left_arrow"/>
+
+    <ImageButton
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/heart1"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="40dp"/>
+
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/foodInfoViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_back"
+        android:layout_marginTop="16dp"/>
+
+    <me.relex.circleindicator.CircleIndicator3
+        android:id="@+id/indicator"
+        android:layout_width="100dp"
+        app:ci_drawable="@drawable/selected"
+        app:ci_drawable_unselected="@drawable/unselected"
+        android:layout_height="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/foodInfoViewPager"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/btn_start_ordering"
+        android:layout_width="match_parent"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="36dp"
+        android:layout_height="64dp"
+        android:text="@string/start_ordering"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_start_ordering"/>
+
+    <TextView
+        android:id="@+id/food_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:text="Veggie tomato mix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/foodInfoViewPager"
+        android:layout_marginTop="32dp"/>
+
+    <TextView
+        android:id="@+id/food_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FA4A0C"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="N1.52000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/food_name"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_delivery_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delivery_info"
+        app:layout_constraintTop_toBottomOf="@id/food_price"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="42dp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/delivery_info_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:text="Delivered between monday aug and thursday 20 from 8pm to 91:32 pm"
+        app:layout_constraintTop_toBottomOf="@id/tv_delivery_info"
+        android:textColor="@color/black"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tv_return_policy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Return policy"
+        app:layout_constraintTop_toBottomOf="@id/delivery_info_text"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="42dp"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:id="@+id/tv_return_policy_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="4"
+        android:ellipsize="end"
+        android:text="All our foods are double checked before leaving our stores so by any case you found a broken food please contact our hotline immediately."
+        app:layout_constraintTop_toBottomOf="@id/tv_return_policy"
+        android:textColor="@color/black"
+        android:layout_marginStart="42dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginTop="8dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
