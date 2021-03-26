@@ -2,25 +2,22 @@ package com.example.foodapp
 
 import android.content.Intent
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
-import android.view.Menu
+import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import android.widget.Toast
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
-import androidx.viewpager.widget.ViewPager
 import com.example.foodapp.bottom_navigation_view.HistoryActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.tabs.TabLayout
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -30,6 +27,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
@@ -47,18 +46,18 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setBackgroundResource(android.R.color.transparent)
         bottomNavigationView.setOnNavigationItemReselectedListener {
             when(it.itemId){
-                R.id.menu_home ->{
+                R.id.menu_home -> {
                     navController.navigate(R.id.homeBottomFragment)
                 }
-                R.id.menu_favorites ->{
+                R.id.menu_favorites -> {
                     Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
                 }
-                
-                R.id.menu_profile ->{
+
+                R.id.menu_profile -> {
                     Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
                 }
                 R.id.menu_history -> {
-                    val intent = Intent(this,HistoryActivity::class.java)
+                    val intent = Intent(this, HistoryActivity::class.java)
                     startActivity(intent)
                 }
                 else ->{

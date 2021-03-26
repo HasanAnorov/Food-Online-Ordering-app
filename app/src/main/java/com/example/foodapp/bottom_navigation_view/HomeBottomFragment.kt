@@ -1,32 +1,40 @@
 package com.example.foodapp.bottom_navigation_view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
-import com.example.foodapp.MainActivity
+import androidx.fragment.app.Fragment
 import com.example.foodapp.R
 import com.example.foodapp.adapters.HomeFoodMenuAdapter
 import com.example.foodapp.databinding.FragmentHomeBottomBinding
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.tabs.TabLayout
+import com.yarolegovich.slidingrootnav.SlidingRootNav
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder
+
 
 class HomeBottomFragment : Fragment() {
 
     private lateinit var binding :FragmentHomeBottomBinding
+    private var slidingRootNav: SlidingRootNav? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        binding = FragmentHomeBottomBinding.inflate(inflater,container,false)
+        binding = FragmentHomeBottomBinding.inflate(inflater, container, false)
 
-        binding.drawIcon.setOnClickListener {
-            (activity as MainActivity).openDrawer()
-        }
+//        binding.drawIcon.setOnClickListener {
+//            (activity as MainActivity).openDrawer()
+//        }
+        activity?.getWindow()?.statusBarColor   = getActivity()?.getColor(R.color.white) ?:R.color.white
 
+
+
+        slidingRootNav = SlidingRootNavBuilder(requireActivity())
+                .withToolbarMenuToggle(binding.toolbar)
+                .withMenuOpened(false)
+
+                //.withContentClickableWhenMenuOpened(false)
+                .withSavedState(savedInstanceState)
+                .withMenuLayout(R.layout.slide_nav_rawer)
+                .inject();
 
 
 
