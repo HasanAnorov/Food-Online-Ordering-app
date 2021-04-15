@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/history_icon"
+        android:layout_width="150dp"
+        android:layout_height="136dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        android:background="@drawable/eva_wifi_off_fill"/>
+
+    <TextView
+        android:id="@+id/tv_no_history_yet"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No internet Connection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/history_icon" />
+
+    <TextView
+        android:id="@+id/info_hit_the_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/tv_no_history_yet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"
+        android:textSize="14sp"
+        android:textColor="#5C5C5C"
+        android:text="Your internet connection is currently \nnot available please check or try again."/>
+
+    <Button
+        android:id="@+id/try_again"
+        android:layout_width="match_parent"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        app:layout_constraintTop_toBottomOf="@id/info_hit_the_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        android:layout_height="54dp"
+        android:text="Try again"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_start_ordering"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

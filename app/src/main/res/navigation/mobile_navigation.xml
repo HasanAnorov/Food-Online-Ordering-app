@@ -6,27 +6,55 @@
     app:startDestination="@+id/homeBottomFragment">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.foodapp.ui_drawer.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.foodapp.ui_drawer.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.foodapp.ui_drawer.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-
-    <fragment
         android:id="@+id/homeBottomFragment"
         android:name="com.example.foodapp.bottom_navigation_view.HomeBottomFragment"
         android:label="fragment_home_bottom"
         tools:layout="@layout/fragment_home_bottom" />
+    <activity
+        android:id="@+id/historyActivity"
+        android:name="com.example.foodapp.bottom_navigation_view.HistoryActivity"
+        android:label="activity_history"
+        tools:layout="@layout/activity_history" />
+    <activity
+        android:id="@+id/itemViewInfoActivity"
+        android:name="com.example.foodapp.ui.ItemViewInfoActivity"
+        android:label="activity_item_view_info"
+        tools:layout="@layout/activity_item_view_info" />
+
+
+    <activity
+        android:id="@+id/nav_offer_and_promo"
+        android:name="com.example.foodapp.ui_drawer.OfferPromoActivity"
+        android:label="activity_offer_promo"
+        tools:layout="@layout/activity_offer_promo" />
+    <activity
+        android:id="@+id/nav_security"
+        android:name="com.example.foodapp.ui_drawer.SecurityActivity"
+        android:label="activity_security"
+        tools:layout="@layout/activity_security" />
+    <activity
+        android:id="@+id/nav_profile"
+        android:name="com.example.foodapp.ui_drawer.ProfileDrawerActivity"
+        android:label="activity_profile_drawer"
+        tools:layout="@layout/activity_profile_drawer" />
+    <activity
+        android:id="@+id/nav_orders"
+        android:name="com.example.foodapp.ui_drawer.OrdersActivity"
+        android:label="activity_orders"
+        tools:layout="@layout/activity_orders" />
+    <activity
+        android:id="@+id/nav_privacy"
+        android:name="com.example.foodapp.ui_drawer.PrivacyActivity"
+        android:label="activity_privacy"
+        tools:layout="@layout/activity_privacy" />
+
+
+
+    <activity
+        android:id="@+id/profileBottomActivity"
+        android:name="com.example.foodapp.bottom_navigation_view.ProfileBottomActivity"
+        android:label="activity_profile_bottom"
+        tools:layout="@layout/activity_profile_bottom" />
+
 
 </navigation>

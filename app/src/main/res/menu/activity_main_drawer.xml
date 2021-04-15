@@ -3,18 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+
+    <group android:checkableBehavior="single"
+           android:id="@+id/drawer_profile">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/gg_profile"
+            android:title="@string/profile" />
     </group>
+
+    <group android:checkableBehavior="single"
+           android:id="@+id/drawer_orders">
+        <item
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/buy"
+            android:title="@string/orders" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/drawer_offerAndPromo">
+        <item
+            android:id="@+id/nav_offer_and_promo"
+            android:icon="@drawable/offer"
+            android:title="Offer and promo" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/drawer_privacyPolicy">
+
+        <item
+            android:id="@+id/nav_privacy"
+            android:icon="@drawable/policy"
+            android:title="Privacy policy" />
+
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/drawer_security">
+
+        <item
+            android:id="@+id/nav_security"
+            android:icon="@drawable/securityalt"
+            android:title="@string/security" />
+
+    </group>
+
 </menu>

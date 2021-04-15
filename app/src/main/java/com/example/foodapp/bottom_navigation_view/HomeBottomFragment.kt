@@ -6,14 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
 import com.example.foodapp.MainActivity
-import com.example.foodapp.R
 import com.example.foodapp.adapters.HomeFoodMenuAdapter
 import com.example.foodapp.databinding.FragmentHomeBottomBinding
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.tabs.TabLayout
-import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder
 
 class HomeBottomFragment : Fragment() {
 
@@ -26,9 +21,6 @@ class HomeBottomFragment : Fragment() {
         binding.drawIcon.setOnClickListener {
             (activity as MainActivity).openDrawer()
         }
-
-
-
 
         binding.etSearch.setOnClickListener {
             Toast.makeText(requireContext(), "Clicked", Toast.LENGTH_LONG).show()

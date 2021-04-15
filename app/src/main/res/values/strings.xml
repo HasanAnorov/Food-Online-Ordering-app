@@ -19,4 +19,8 @@
     <string name="start_ordering">Start ordering</string>
     <string name="delivery_info">Delivery info</string>
     <string name="search">Search</string>
+    <string name="profile">Profile</string>
+    <string name="orders">Orders</string>
+    <string name="security">Security</string>
+    <string name="sign_out">Sign-out</string>
 </resources>

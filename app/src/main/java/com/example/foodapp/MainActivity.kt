@@ -1,26 +1,16 @@
 package com.example.foodapp
 
-import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.view.Menu
 import android.widget.Toast
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
-import androidx.viewpager.widget.ViewPager
-import com.example.foodapp.bottom_navigation_view.HistoryActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.tabs.TabLayout
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,34 +29,40 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
+                R.id.nav_profile, R.id.nav_orders, R.id.nav_offer_and_promo, R.id.nav_privacy, R.id.nav_security), drawerLayout)
 
         navView.setupWithNavController(navController)
 
         bottomNavigationView.itemRippleColor = null
         bottomNavigationView.setBackgroundResource(android.R.color.transparent)
-        bottomNavigationView.setOnNavigationItemReselectedListener {
-            when(it.itemId){
-                R.id.menu_home ->{
-                    navController.navigate(R.id.homeBottomFragment)
-                }
-                R.id.menu_favorites ->{
-                    Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
-                }
-                
-                R.id.menu_profile ->{
-                    Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show()
-                }
-                R.id.menu_history -> {
-                    val intent = Intent(this,HistoryActivity::class.java)
-                    startActivity(intent)
-                }
-                else ->{
-                    navController.navigate(R.id.homeBottomFragment)
-                }
+        bottomNavigationView.setupWithNavController(navController)
 
-            }
-        }
+
+
+       bottomNavigationView.setOnNavigationItemSelectedListener {
+
+           when(it.itemId){
+               R.id.menu_home -> {
+                   if (!bottomNavigationView.menu.getItem(0).isChecked)
+                   navController.navigate(R.id.homeBottomFragment)
+               }
+               R.id.menu_history -> {
+                   navController.navigate(R.id.historyActivity)
+               }
+               R.id.menu_profile -> {
+                   navController.navigate(R.id.profileBottomActivity)
+               }
+               R.id.menu_favorites -> {
+                   Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show()
+               }
+               else ->{
+                   navController.navigate(R.id.homeBottomFragment)
+               }
+           }
+
+           true
+       }
+
 
     }
 
@@ -84,8 +80,17 @@ class MainActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
+        }
+        else {
             super.onBackPressed()
         }
     }
+
+
+    override fun onResume() {
+        super.onResume()
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNavigationView.menu.getItem(0).isChecked = true
+    }
+
 }

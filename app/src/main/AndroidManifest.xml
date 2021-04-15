@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodApp">
-        <activity android:name=".ui.ItemViewInfoActivity"></activity>
+        <activity android:name=".ui.CartActivity"></activity>
+        <activity android:name=".ui_drawer.SecurityActivity" />
+        <activity android:name=".ui_drawer.PrivacyActivity" />
+        <activity android:name=".ui_drawer.OfferPromoActivity" />
+        <activity android:name=".ui_drawer.OrdersActivity" />
+        <activity android:name=".ui_drawer.ProfileDrawerActivity" />
+        <activity android:name=".bottom_navigation_view.ProfileBottomActivity" />
+        <activity android:name=".ui.ItemViewInfoActivity" />
         <activity android:name=".bottom_navigation_view.HistoryActivity" />
         <activity android:name=".registration.RegistrationActivity" />
         <activity android:name=".registration.SplashActivity" />
